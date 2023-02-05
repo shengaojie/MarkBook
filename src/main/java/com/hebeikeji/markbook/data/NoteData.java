@@ -1,4 +1,4 @@
-package com.hebeikeji;
+package com.hebeikeji.markbook.data;
 
 /**
  * @description: 用于存放笔记中的字段

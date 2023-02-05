@@ -1,22 +1,29 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-    <id>com.hebeikeji.MarkNote</id>
+    <id>com.hebeikeji.MarkBook</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>MarkNote</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor email="2559198145@qq.com" url="https://www.hebeikeji.com">hebeikeji</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+        这是一款可以帮助程序员在阅读代码时添加笔记，并且
+        将笔记生成markdwon文件的插件。
   ]]></description>
+
+    <change-notes>
+        <![CDATA[
+        第一版版，包含笔记添加和文档生成的主题功能<br>
+        <em>仅支持markdwon形式的笔记。</em>
+  ]]>
+    </change-notes>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -25,6 +32,13 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-
+        <toolWindow factoryClass="com.hebeikeji.markbook.window.NoteListWindowFactory" id="notewindow" anchor="right" icon="/img/logo.icns"></toolWindow>
     </extensions>
+    <actions>
+        <action id="MB_PopupAction" class="com.hebeikeji.markbook.action.PopupAction" text="添加MB笔记"
+                description="添加MB笔记到子菜单">
+            <add-to-group group-id="EditorPopupMenu3" anchor="last"/>
+        </action>
+
+    </actions>
 </idea-plugin>
