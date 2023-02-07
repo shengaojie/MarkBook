@@ -1,11 +1,9 @@
 package com.hebeikeji.markbook.processor;
 
-import com.google.common.io.FileBackedOutputStream;
 import com.intellij.ide.fileTemplates.impl.UrlUtil;
 import freemarker.cache.StringTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
-import org.codehaus.groovy.runtime.StringBufferWriter;
 
 import java.io.*;
 import java.util.HashMap;
@@ -32,10 +30,11 @@ public class MDFreeMarkProcessor extends AbstractFreeMarkProcessor {
     protected Template getTemplete() throws IOException {
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_28);
         String templateContent = UrlUtil.loadText(MDFreeMarkProcessor.class.getResource("/template/md.ftl"));
+        System.out.println("-----------------"+templateContent);
         StringTemplateLoader stringTemplateLoader = new StringTemplateLoader();
-       stringTemplateLoader.putTemplate("MDTemplate",templateContent);
-       configuration.setTemplateLoader(stringTemplateLoader);
-       return configuration.getTemplate("MDTemplate");
+        stringTemplateLoader.putTemplate("MDTemplate",templateContent);
+        configuration.setTemplateLoader(stringTemplateLoader);
+        return configuration.getTemplate("MDTemplate");
 
     }
 

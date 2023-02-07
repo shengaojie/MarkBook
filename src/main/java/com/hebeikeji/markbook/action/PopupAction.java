@@ -19,8 +19,6 @@ public class PopupAction extends AnAction {
         //获取当前的文本内容
         String selectedText = selectionModel.getSelectedText();
 
-
-
         //获取选择的内容，文件名称，文件类型存储到全局变量
         DataCenter.SELECTED_TEXT = selectedText;
         DataCenter.CURRENT_FILE_NAME =  e.getRequiredData(CommonDataKeys.PSI_FILE).getViewProvider().

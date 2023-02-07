@@ -18,14 +18,14 @@ public class NoteData {
     //源码所在的文件名
     private String fileName;
     //源码所在的文件的类型
-    private String filetype;
+    private String fileType;
 
     public NoteData(String title, String mark, String content, String fileName, String filetype) {
         this.title = title;
         this.mark = mark;
         this.content = content;
         this.fileName = fileName;
-        this.filetype = filetype;
+        this.fileType = fileType;
     }
 
     public String getTitle() {
@@ -60,11 +60,11 @@ public class NoteData {
         this.fileName = fileName;
     }
 
-    public String getFiletype() {
-        return filetype;
+    public String getFileType() {
+        return fileType;
     }
 
-    public void setFiletype(String filetype) {
-        this.filetype = filetype;
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
     }
 }

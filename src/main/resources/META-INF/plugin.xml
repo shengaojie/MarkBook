@@ -32,7 +32,12 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.hebeikeji.markbook.window.NoteListWindowFactory" id="notewindow" anchor="right" icon="/img/logo.icns"></toolWindow>
+        <toolWindow factoryClass="com.hebeikeji.markbook.window.NoteListWindowFactory"
+                                            id="notewindow"
+                                            anchor="right"
+                                            icon="/img/logo.icns">
+
+        </toolWindow>
     </extensions>
     <actions>
         <action id="MB_PopupAction" class="com.hebeikeji.markbook.action.PopupAction" text="添加MB笔记"

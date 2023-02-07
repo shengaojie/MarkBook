@@ -19,14 +19,15 @@ public class DataCenter {
     public static String CURRENT_FILE_NAME = null;
     //当前文件的类型
     public static String CURRENT_FILE_TYPE = null;
-
-    public static String[] HEAD = {"标题","备注","文件名","代码段"};
     //data:是table中的数据
+    public static String[] HEAD = {"标题","备注","文件名","代码段"};
+
     //HEAD:是表头信息
     public static DefaultTableModel TABLE_MODEL = new DefaultTableModel(null,HEAD);
     //笔记列表集合
     public static List<NoteData> NOTE_LIST = new LinkedList<>();
 
+    //该方式是用于清空笔记列表
     public static void reset(){
         NOTE_LIST.clear();
         TABLE_MODEL.setDataVector(null,HEAD);

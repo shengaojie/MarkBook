@@ -34,16 +34,26 @@ public class NoteListWindow {
         return jContent;
     }
 
-    public NoteListWindow(Project project, ToolWindow toolWindow) {
+    //右侧笔记列表的初始化
+    public void init(){
         tbContent.setModel(DataCenter.TABLE_MODEL);
         tbContent.setEnabled(true);
+    }
+
+    public NoteListWindow(Project project, ToolWindow toolWindow) {
+        //在构造方法中调用init()
+        init();
+
+        /*
+        * 生成文档按钮
+        * */
         btCreate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String topicText = tfTopic.getText();
                 String fileName = topicText + ".md";
                 if(topicText == null || "".equals(topicText)){
-                    MessageDialogBuilder.yesNo("操作结果","文档标题没有输入");
+                    MessageDialogBuilder.yesNo("操作结果","文档标题没有输入").show();
                     return;
                 }
 
@@ -63,12 +73,19 @@ public class NoteListWindow {
                 }
             }
         });
+        /*
+        * 清除列表按钮
+        * */
         btClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DataCenter.reset();
             }
         });
+
+        /*
+        * 关闭按钮
+        * */
         btClose.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
